@@ -4,13 +4,11 @@ module.exports = function (grunt) {
 		'css/default.scss'
 	]
 
-
 	grunt.initConfig({
 		sass: {
 			dev: {
 				options: {
-					sourcemap: 'auto',
-					style : 'compressed'
+					sourcemap: 'auto'
 				},
 				files: {
 					'build/default.css': sassFiles
@@ -18,7 +16,8 @@ module.exports = function (grunt) {
 			},
 			prod: {
 				options: {
-					sourcemap: 'none'
+					sourcemap: 'none',
+					style : 'compressed'
 				},
 				files: {
 					'build/default.css': sassFiles
@@ -36,14 +35,11 @@ module.exports = function (grunt) {
 		}
 	});
 
-
-
-
-
-	grunt.loadNpmTasks('grunt-contrib-uglify');//
-	grunt.loadNpmTasks('grunt-contrib-watch');//
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-string-replace');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+
 
 	grunt.registerTask('default', ['sass:dev', 'watch']);
 }
