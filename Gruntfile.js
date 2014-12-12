@@ -50,7 +50,7 @@ module.exports = function (grunt) {
 				options: {
 					replacements: [
 						{
-							pattern: /\<\!\-\-\$dev/,
+							pattern: /\<\!\-\-\$dev\s/,
 							replacement: function () {
 								return '<!--$dev-->'
 							}
@@ -75,6 +75,39 @@ module.exports = function (grunt) {
 						}
 					]
 				}
+			},
+			prod: {
+				files: {
+					'index.html': 'index.html'
+				},
+				options: {
+					replacements: [
+						{
+							pattern: /\<\!\-\-\$dev/,
+							replacement: function () {
+								return '<!--$prod-->'
+							}
+						},
+						{
+							pattern: /prod\&\-\-\>/,
+							replacement: function () {
+								return '<!--&prod-->'
+							}
+						},
+						{
+							pattern: /\<\!\-\-\$dev\-\-\>/,
+							replacement: function () {
+								return '<!--$dev'
+							}
+						},
+						{
+							pattern: /\<\!\-\-\&dev\-\-\>/,
+							replacement: function () {
+								return '&dev-->'
+							}
+						}
+					]
+				}
 			}
 		},
 		watch: {
@@ -93,5 +126,5 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-string-replace');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 
-	grunt.registerTask('default', ['sass:dev', 'watch']);
+	grunt.registerTask('default', ['sass:dev', 'string-replace:dev', 'watch']);
 }
