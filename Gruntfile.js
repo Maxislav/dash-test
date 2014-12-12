@@ -4,6 +4,13 @@ module.exports = function (grunt) {
 		'css/default.scss'
 	]
 
+	var jsFiles = [
+		'lib/angular/angular.js',
+		'lib/angular/extendHttp.js',
+		'lib/angular/angular-ui-router.js',
+		'js/init.js'
+	]
+
 	grunt.initConfig({
 		sass: {
 			dev: {
@@ -24,6 +31,32 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		uglify: {
+			prod: {
+				options: {
+					sourceMap: true,
+					mangle: false
+				},
+				files: {
+					'build/scripts.min.js': jsFiles
+				}
+			}
+		},
+		'string-replace':{
+			dev: {
+				files: {
+					'index.html': 'index.html'
+				},
+				options: {
+					replacements: [ {
+						pattern: /js\/init.js\?v=[^"]+/,
+						replacement: function(){
+							return 'js/init.js?v='+dateProd()
+						}
+					}]
+				}
+			}
+		},
 		watch: {
 			_sass: {
 				files: sassFiles,
@@ -39,7 +72,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-string-replace');
 	grunt.loadNpmTasks('grunt-contrib-sass');
-
 
 	grunt.registerTask('default', ['sass:dev', 'watch']);
 }
