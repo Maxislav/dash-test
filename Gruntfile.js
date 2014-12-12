@@ -2,7 +2,8 @@ module.exports = function (grunt) {
 
 	var sassFiles = [
 		'css/default.scss',
-		'css/media.scss'
+		'css/media.scss',
+		'css/animation.scss'
 	]
 
 	var jsFiles = [
