@@ -83,13 +83,13 @@ module.exports = function (grunt) {
 				options: {
 					replacements: [
 						{
-							pattern: /\<\!\-\-\$prod/,
+							pattern: /\<\!\-\-\$prod\s/,
 							replacement: function () {
 								return '<!--$prod-->'
 							}
 						},
 						{
-							pattern: /\&prod\-\-\>/,
+							pattern: /\s\&prod\-\-\>/,
 							replacement: function () {
 								return '<!--&prod-->'
 							}
