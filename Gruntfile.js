@@ -35,7 +35,7 @@ module.exports = function (grunt) {
 			prod: {
 				options: {
 					sourceMap: true,
-					mangle: false
+					mangle: true
 				},
 				files: {
 					'build/scripts.min.js': jsFiles
@@ -64,13 +64,13 @@ module.exports = function (grunt) {
 						{
 							pattern: /\<\!\-\-\$prod\-\-\>/,
 							replacement: function () {
-								return '<!--$prod'
+								return '<!--$prod '
 							}
 						},
 						{
 							pattern: /\<\!\-\-\&prod\-\-\>/,
 							replacement: function () {
-								return '&prod-->'
+								return ' &prod-->'
 							}
 						}
 					]
