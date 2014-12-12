@@ -56,7 +56,7 @@ module.exports = function (grunt) {
 							}
 						},
 						{
-							pattern: /dev\&\-\-\>/,
+							pattern: /\s\&dev\-\-\>/,
 							replacement: function () {
 								return '<!--&dev-->'
 							}
@@ -97,13 +97,13 @@ module.exports = function (grunt) {
 						{
 							pattern: /\<\!\-\-\$dev\-\-\>/,
 							replacement: function () {
-								return '<!--$dev'
+								return '<!--$dev '
 							}
 						},
 						{
 							pattern: /\<\!\-\-\&dev\-\-\>/,
 							replacement: function () {
-								return '&dev-->'
+								return ' &dev-->'
 							}
 						}
 					]
