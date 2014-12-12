@@ -83,13 +83,13 @@ module.exports = function (grunt) {
 				options: {
 					replacements: [
 						{
-							pattern: /\<\!\-\-\$dev/,
+							pattern: /\<\!\-\-\$prod/,
 							replacement: function () {
 								return '<!--$prod-->'
 							}
 						},
 						{
-							pattern: /prod\&\-\-\>/,
+							pattern: /\&prod\-\-\>/,
 							replacement: function () {
 								return '<!--&prod-->'
 							}
@@ -127,4 +127,5 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 
 	grunt.registerTask('default', ['sass:dev', 'string-replace:dev', 'watch']);
+	grunt.registerTask('prod', ['sass:prod', 'string-replace:prod', 'uglify']);
 }
