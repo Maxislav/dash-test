@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 			prod: {
 				options: {
 					sourcemap: 'none',
-					style : 'compressed'
+					style: 'compressed'
 				},
 				files: {
 					'build/default.css': sassFiles
@@ -42,18 +42,38 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		'string-replace':{
+		'string-replace': {
 			dev: {
 				files: {
 					'index.html': 'index.html'
 				},
 				options: {
-					replacements: [ {
-						pattern: /js\/init.js\?v=[^"]+/,
-						replacement: function(){
-							return 'js/init.js?v='+dateProd()
+					replacements: [
+						{
+							pattern: /\<\!\-\-\$dev/,
+							replacement: function () {
+								return '<!--$dev-->'
+							}
+						},
+						{
+							pattern: /dev\&\-\-\>/,
+							replacement: function () {
+								return '<!--&dev-->'
+							}
+						},
+						{
+							pattern: /\<\!\-\-\$prod\-\-\>/,
+							replacement: function () {
+								return '<!--$prod'
+							}
+						},
+						{
+							pattern: /\<\!\-\-\&prod\-\-\>/,
+							replacement: function () {
+								return '&prod-->'
+							}
 						}
-					}]
+					]
 				}
 			}
 		},
