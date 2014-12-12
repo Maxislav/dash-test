@@ -8,7 +8,8 @@ module.exports = function (grunt) {
 		'lib/angular/angular.js',
 		'lib/angular/extendHttp.js',
 		'lib/angular/angular-ui-router.js',
-		'js/init.js'
+		'js/init.js',
+		'js/services.js'
 	]
 
 	grunt.initConfig({
