@@ -1,15 +1,18 @@
 module.exports = function (grunt) {
 
 	var sassFiles = [
-		'css/default.scss'
+		'css/default.scss',
+		'css/media.scss'
 	]
 
 	var jsFiles = [
 		'lib/angular/angular.js',
 		'lib/angular/extendHttp.js',
 		'lib/angular/angular-ui-router.js',
+		'lib/angular/angular-animate.js',
 		'js/init.js',
-		'js/services.js'
+		'js/services.js',
+		'js/controllers.js'
 	]
 
 	grunt.initConfig({

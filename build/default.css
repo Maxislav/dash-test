@@ -1,8 +1,33 @@
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: arial,sans-serif; }
 
 body {
-  background: darkgray; }
+  background: darkgray;
+  width: 100%; }
+
+.nav-bar {
+  width: 1200px;
+  margin: 0 auto; }
+  .nav-bar > ul {
+    background: greenyellow; }
+  .nav-bar li {
+    display: inline-block;
+    list-style-position: inside;
+    white-space: nowrap;
+    padding: 10px 0; }
+    .nav-bar li.active {
+      background: #A8BCDF; }
+  .nav-bar a {
+    text-decoration: none;
+    color: darkblue;
+    padding: 10px 20px; }
+    .nav-bar a:hover {
+      background: #e5ffdc; }
+
+@media only screen and (max-width: 1200px) {
+  .nav-bar {
+    width: 100%; } }
 
 /*# sourceMappingURL=default.css.map */
