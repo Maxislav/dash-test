@@ -15,6 +15,10 @@ app.config(['$httpProvider', '$stateProvider', '$urlRouterProvider', function ($
 			url: "/gallery",
 			templateUrl: "partials/navbar/gallery.html"
 		})
+		.state('gallery.g', {
+			url: "/g",
+			templateUrl: "partials/navbar/gallery.html"
+		})
 		.state('me', {
 			url: "/me",
 			templateUrl: "partials/navbar/me.html"
