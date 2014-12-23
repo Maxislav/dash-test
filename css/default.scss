@@ -1,4 +1,4 @@
-
+@import "bootstrap";
 *{
   margin: 0;
   padding: 0;
@@ -7,35 +7,9 @@
 
 
 body{
-  background: darkgray;
+  background: #c7dfff;
   width: 100%;
 }
-.nav-bar{
-  width: 1200px;
-  margin: 0 auto;
-  &>ul{
-    background: greenyellow;
-  }
-  li{
-    display: inline-block;
-    list-style-position: inside;
-     white-space: nowrap;
-    padding: 10px 0;
-    &.active{
-      background: #A8BCDF;
-    }
-  }
-  a{
-    text-decoration: none;
-    color: darkblue;
-    padding: 10px 20px;
-    &:hover{
-      background: #e5ffdc;
-    }
-  }
-}
-.active{
-  background: #A8BCDF;
-}
+
 @import 'media';
 @import 'animation';

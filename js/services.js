@@ -1,16 +1,11 @@
 app.service('inputData', function(){
 	this.data = [
 		{
-			text: 'Галерея',
-			href: 'gallery'
+			text: 'Widgets',
+			href: 'widgets'
 		},
 		{
-			text: 'Обо мне',
-			href: 'me'
-
-		},
-		{
-			text: 'Контакты',
+			text: 'Contact',
 			href: 'contact'
 		}
 	]

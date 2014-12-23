@@ -9,20 +9,18 @@ app.config(['$httpProvider', '$stateProvider', '$urlRouterProvider', function ($
 	$httpProvider.defaults.transformRequest = function (data) {
 		return angular.isObject(data) && String(data) !== '[object File]' ? angular.toParam(data) : data;
 	};
-	$urlRouterProvider.otherwise("/me");
+	$urlRouterProvider.otherwise("/widgets");
 	$stateProvider
-		.state('gallery', {
-			url: "/gallery",
-			templateUrl: "partials/navbar/gallery.html"
+		.state('widgets', {
+			url: "/widgets",
+			templateUrl: "partials/navbar/widgets.html"
 		})
-		.state('gallery.g', {
-			url: "/g",
-			templateUrl: "partials/navbar/gallery.html"
+		.state('widgets.item', {
+			url: "/:item",
+			templateUrl: "partials/navbar/calendar.html"
 		})
-		.state('me', {
-			url: "/me",
-			templateUrl: "partials/navbar/me.html"
-		})
+
+
 		.state('contact', {
 			url: "/contact",
 			templateUrl: "partials/navbar/contact.html"

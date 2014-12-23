@@ -3,7 +3,9 @@ module.exports = function (grunt) {
 	var sassFiles = [
 		'css/default.scss',
 		'css/media.scss',
-		'css/animation.scss'
+		'css/animation.scss',
+		'css/calendar.scss',
+		'css/bootstrap.min.css',
 	]
 
 	var jsFiles = [
